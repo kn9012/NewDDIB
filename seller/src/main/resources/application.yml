@@ -1,3 +1,29 @@
+server:
+  port: 8085
+
+releaseHostName: seller
+
 spring:
-  profiles:
-    active: dev
+  application:
+    name: seller
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+      generate-ddl: true
+      show-sql: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ddib?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: ssafy
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

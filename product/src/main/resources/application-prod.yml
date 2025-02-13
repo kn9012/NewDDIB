@@ -38,14 +38,14 @@ management:
     tracing:
       endpoint: "http://k10c102.p.ssafy.io:9411/api/v2/spans"
 
-eureka:
-  instance:
-    hostname: k10c102.p.ssafy.io
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://k10c102.p.ssafy.io:8761/eureka/
+  eureka:
+    instance:
+      hostname: localhost
+    client:
+      register-with-eureka: false
+      fetch-registry: false
+      service-url:
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
 logging:
   level:

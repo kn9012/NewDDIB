@@ -33,9 +33,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class KakaoPayService {
 
-    @Value("${pay.kakao.cid}")
     private String cid;
-    @Value("${pay.kakao.secret-key}")
     private String secretKey;
 
     private final PaymentRepository paymentRepository;

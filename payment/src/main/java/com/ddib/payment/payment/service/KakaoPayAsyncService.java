@@ -40,9 +40,7 @@ import java.util.concurrent.TimeUnit;
 @RequiredArgsConstructor
 public class KakaoPayAsyncService {
 
-    @Value("${pay.kakao.cid}")
     private String cid;
-    @Value("${pay.kakao.secret-key}")
     private String secretKey;
 
     private final ProductService productService;

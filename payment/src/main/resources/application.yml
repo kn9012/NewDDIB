@@ -1,3 +1,46 @@
+server:
+  port: 8083
+
 spring:
-  profiles:
-    active: dev
+  application:
+    name: payment
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ddib?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: ssafy
+    hikari:
+      maximum-pool-size: 500
+      connection-timeout: 50000
+
+  eureka:
+    instance:
+      hostname: localhost
+    client:
+      register-with-eureka: false
+      fetch-registry: false
+      service-url:
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+springdoc:
+  swagger-ui:
+    path: /swagger.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /api-docs
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8
+
+feign-client:
+  product: localhost
+  waiting: localhost

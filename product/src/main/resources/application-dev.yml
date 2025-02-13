@@ -1,7 +1,6 @@
 server:
   port: 8082
 
-# -- Default spring configuration
 spring:
   servlet:
     multipart:
@@ -12,20 +11,28 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/ddib?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull&rewriteBatchedStatements=true
-    username: <로컬 username>
-    password: <로컬 password>
+    username: root
+    password: ssafy
   jpa:
     open-in-view: false
-#    hibernate:
-#      ddl-auto: update
+    hibernate:
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
-#        show_sql: true
-#        format_sql: true
+        show_sql: true
+        format_sql: true
   batch:
     jdbc:
       initialize-schema: always
+  eureka:
+    instance:
+      hostname: localhost
+    client:
+      register-with-eureka: false
+      fetch-registry: false
+      service-url:
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
 management:
   tracing:
@@ -38,14 +45,6 @@ management:
     tracing:
       endpoint: "http://127.0.0.1:9411/api/v2/spans"
 
-eureka:
-  instance:
-    hostname: 127.0.0.1
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_URL:http://127.0.0.1:8761/eureka/}
-
-
 logging:
   level:
     com:
@@ -54,4 +53,4 @@ logging:
   config: classpath:logback-dev.xml
 
 feign-client:
-  notification: http://localhost:8084
+  notification: localhost:8084
