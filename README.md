@@ -1,0 +1,473 @@
+# ⏱ 타임딜 플랫폼 대여 서비스 ⏱
+
+- **터지지 않는 타임딜 플랫폼 : DDIB**
+- **기업에게 서버를 대여해주는 플랫폼 : BIDD**
+
+## 👨‍👩‍👧‍👦 프로젝트 기간 및 팀원
+
+- 팀명 : 쳇바퀴
+- 개발 기간 : 2024.04.08 ~ 2024.05.20 (6주)
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="https://avatars.githubusercontent.com/kn9012" width="150px;" alt="김유나"/>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://avatars.githubusercontent.com/kimyusan" width="150px;" alt="김유산"/>
+    </td>
+   <td align="center" width="33%">
+      <img src="https://avatars.githubusercontent.com/gnoesnooj" width="150px;" alt="예준성 (팀장)"/>
+    </td>
+  </tr>
+  <tr>    
+    <td align="center">
+      <a href="https://github.com/kn9012">
+        <div>김유나</div>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/kimyusan">
+        <div>김유산</div>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/gnoesnooj">
+        <div>예준성 (팀장)</div>
+      </a>
+    </td>
+  </tr>
+  <tr>    
+    <td align="center">
+     <b>BackEnd</b>
+    </td>
+    <td align="center">
+      <b>BackEnd, Infra</b>
+    </td>
+    <td align="center">
+      <b>BackEnd</b>
+    </td>
+  </tr>
+   <tr>    
+    <td>
+     <b>[회원 서버 개발]</b><br>- Oauth2를 이용한 카카오 소셜로그인 구현<br>- Spring Security와 JWT를 이용한 인증/인가<br>- 단위 테스트 코드 작성<br><br><b>[API Gateway & Eureka 서버 개발]</b><br>- 1차 개발 시 API Gateway 활용하여 인증/인가 처리 및 라우팅 처리<br><br><b>[알림 서버 개발]</b><br>- FCM 알림 기능 구현<br>- 단위 테스트 코드 작성</b>
+    </td>
+    <td>
+      <b>[Kubernetes 설계]</b><br>- SVC를 통한 MSA 설계 및 구축<br>- 인그라스 컨트롤러 설정<br>- Helm을 이용한 상태관리<br><br><b>[Prometheus + Grafana]</b><br>- 메트릭 데이터를 수집해 시스템 모니터링 구축<br>
+    </td>
+    <td>
+      <b>[상품 서버 개발]</b><br>- Spring Batch를 통한 상품 상태 관리 시스템 구현<br>- 스케줄링을 통해 알림 시스템 구현<br><br><b>[EFK 로깅 시스템]</b><br>- Logback 과 EFK 를 활용한 로깅 시스템 구축<br><br><b>[Tx 추적 시스템]</b><br>- Micrometer와 Sleuth 활용한 분산 트랜잭션 추적 시스템 구축<br>
+    </td>
+  </tr>
+ 
+  <tr>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/tpwls101" width="150px;" alt="유세진"/>
+    </td>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/mkwwd" width="150px;" alt="조자영"/>
+    </td>
+   <td align="center">
+      <img src="https://avatars.githubusercontent.com/tneserp" width="150px;" alt="한재현"/>
+    </td>
+  </tr>
+  <tr>    
+    <td align="center">
+      <a href="https://github.com/tpwls101">
+        <div>유세진</div>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/mkwwd">
+        <div>조자영</div>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/tneserp">
+        <div>한재현</div>
+      </a>
+    </td>
+  </tr>
+  <tr>    
+    <td align="center">
+     <b>BackEnd 리더</b>
+    </td>
+    <td align="center">
+      <b>FrontEnd 리더</b>
+    </td>
+    <td align="center">
+      <b>BackEnd</b>
+    </td>
+  </tr>
+   <tr>    
+    <td>
+     <b>[결제 서버 개발]</b><br>- 카카오페이 결제 및 주문 관련 API 구현<br>- 카카오페이 결제 시스템 비동기 처리 및 테스트 코드를 통한 성능 향상 확인<br>- Redisson을 활용한 재고 동시성 제어 구현 및 테스트 코드를 통한 적용 전후 테스트<br><br><b>[부하테스트]</b><br>- JMeter를 사용하여 테스트 시나리오 작성 및 부하테스트 진행<br>
+    </td>
+    <td>
+      <b>[프론트엔드 설계 및 개발]</b><br>- Next.js를 이용하여 SSL방식 사용<br>- Recoil을 사용하여 Client에서의 데이터를 관리<br>- react-query를 사용하여 Server에서의 데이터를 관리하고 데이터의 변경이 없으면 호출없이 데이터를 사용하도록 구현<br>
+    </td>
+    <td>
+      <b>[대기열 시스템 개발]</b><br>- Spring Webflux를 이용한 대기열 서버 구축<br>- Reactive Redis를 통한 사용자
+선착순 입장 보장<br><br><b>[부하테스트]</b><br>- Artillery, Jmeter를 사용하여 부하테스트 진행<br>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+## ✏ 개요
+
+ 주문 폭주로 인한 서버 다운을 경험하신 적이 있나요? 만반의 준비를 했음에도 불구하고 대용량 트래픽을 견디지 못해 고객님들께 사과의 말씀을 전하신 적이 있나요?
+
+ 할인 이벤트를 위한 서버 유지비가 부담되는 중소기업들을 위해 타임딜 이벤트 대여 플랫폼인 DDIB과 BIDD를 개발했습니다.
+
+ 우리나라 중소기업의 비율은 무려 99%에 달하며, 중소기업의 온라인 매출 판매액은 약 80%에 달합니다. 온라인 시장이 커져가는 만큼, 기업들은 고가의 연예인 광고비에 힘을 쓰는 대신 네고왕처럼 온라인상에서 할인 이벤트를 진행함으로써 기업을 홍보하고 있으며 이는 소비자들에게 큰 호응을 얻고 있습니다. 기업은 수수료 없이 서버 대여비만 지불함으로써 대용량 트래픽에도 견딜 수 있는 환경을 구축할 수 있고, 소비자 입장에서는 같은 상품일지라도 더욱 저렴하게 구매할 수 있다는 장점이 있습니다. 지금 바로 BIDD에서 서버를 대여하고, 터지지 않는 타임딜 플랫폼인 DDIB을 만나러 가볼까요?
+
+<br>
+
+## 🖥️ 개발 환경
+
+### **💻 IDE**
+
+- IntelliJ IDEA `2024.1`
+- Visual Studio Code
+
+
+
+### **🔧** BackEnd
+
+- Oracle JDK `17`
+- Spring Boot `3.2.4`
+- Spring Cloud Netflix Eureka `4.1.1`
+- Spring Cloud Gateway `4.1.2`
+- Spring Cloud Openfeign `4.1.1`
+- Spring Data JPA `3.2.4`
+- Spring Webflux `3.2.4`
+- Spring Batch
+- Spring Security `6.2.3`
+- OAuth2 `9.43.3`
+- JWT `0.12.3`
+- Logback
+- Micrometer
+- Swagger
+
+### **🎨** FrontEnd
+
+- Next.js
+- React.js
+- Typescript
+- SCSS
+- Zustand
+- React Query
+- node.js `10.5.0`
+
+### 🗑 Database
+
+- MySQL `8.3.0`
+- Redis
+    - Redisson `3.29.0`
+    - Reactive Redis `3.2.4`
+- AWS S3 `2.2.6`
+
+### **🚀** Infra
+
+- AWS EC2
+- Google Cloud Platform
+- MobaXterm `24.1`
+- Kubernetes `1.28.9`
+- Nginx `1.18.0 (Ubuntu)`
+- Jenkins `2.456`
+- Docker `26.1.0`
+- Docker-Compose `1.28.2`
+- Zipkin
+
+### 🏁 Test
+
+- JMeter `5.6.3`
+- Artilery
+
+### 👀 Monitoring
+
+- Prometheus
+- Grafana
+
+### 🎈 Logging
+
+- Elasticsearch
+- Fluentd
+- Kibana
+
+### **🤝** Communication Tools
+
+- Git
+- Jira
+- Notion
+- Mattermost
+
+<br>
+
+## ⚒ 서비스 기능 소개
+
+### BIDD (기업)
+
+**1️⃣ 기업 신청**
+
+기업 회원은 상품을 등록하기 위해 기업 신청을 할 수 있다.
+
+![기업신청](https://github.com/tpwls101/DDIB/assets/97137124/a9bcce34-3117-432c-aa38-6d6bea65e439)
+
+**2️⃣ 상품 등록**
+
+기업 회원은 타임딜 이벤트 진행을 원하는 날짜 및 시간대를 선택해 상품을 등록할 수 있다.
+
+![상품 등록](https://github.com/tpwls101/DDIB/assets/97137124/c81b44b5-f3e1-4ee3-b205-79bfe71c79f7)
+
+**3️⃣ 판매내역 조회**
+
+기업회원은 등록한 상품에 대한 판매내역을 조회할 수 있다.
+
+![판매내역 조회](https://github.com/tpwls101/DDIB/assets/97137124/d608bf22-f7a9-478d-a60d-48937d803e53)
+
+### **DDIB (소비자)**
+
+**1️⃣ 타임딜 목록 조회**
+
+사용자는 오늘의 타임딜과 주간 타임딜, 카테고리별 타임딜 이벤트를 조회할 수 있다.
+
+![타임딜 목록 조회 - readme ver](https://github.com/tpwls101/DDIB/assets/97137124/78dc587c-8c43-4d90-bb89-6cc04b2ffc02)
+
+**2️⃣ 검색**
+
+사용자는 원하는 타임딜 이벤트를 검색할 수 있다.
+
+![상품 검색](https://github.com/tpwls101/DDIB/assets/97137124/5494c256-cab8-43e0-8d40-a79e44ea4922)
+
+**3️⃣ 상품 상세 조회**
+
+사용자는 상품에 대한 상세 정보 및 해당 기업에 대한 정보를 조회할 수 있다.
+
+![타임딜 상세 조회 - readme ver](https://github.com/tpwls101/DDIB/assets/97137124/32d4fe9a-d812-4cbf-a5ba-fe530b248ed3)
+
+**4️⃣ 상품 좋아요/취소**
+
+상품 개별 좋아요를 누르면 해당 상품에 대한 이벤트 시작 12시간 전, 1시간 전에 알림을 받을 수 있다.
+
+![상품 좋아요와 취소](https://github.com/tpwls101/DDIB/assets/97137124/cdf1f43f-0f89-4a10-82b3-030306a72925)
+
+**5️⃣ 대기열 입장**
+
+입장한 순서대로 대기열에서 순번을 가지게 되고, 새로고침 시 마지막 순번으로 들어가게 된다.
+
+![대기열 (1)](https://github.com/tpwls101/DDIB/assets/97137124/1ec24f65-a6fe-433a-afd0-9516e0a9de81)
+
+**6️⃣ 주문/결제하기**
+
+사용자는 주문하고자 하는 상품과 수량, 가격을 확인하고 배송지 정보를 입력한다. QR 코드를 통해 카카오페이로 결제를 진행한다.
+
+![주문결제](https://github.com/tpwls101/DDIB/assets/97137124/531f25c3-515e-4f9c-880b-f63807fc40be)
+
+**7️⃣ 마이페이지 - 주문내역 조회**
+
+사용자는 본인이 주문한 모든 주문내역에 대한 정보를 조회할 수 있다.
+
+![주문내역 조회](https://github.com/tpwls101/DDIB/assets/97137124/ce6f1f6c-5d7e-45ea-8a2a-f67e8328900a)
+
+**8️⃣ 마이페이지 - 환불**
+
+사용자는 구매를 취소하여 환불을 받을 수 있다.
+
+![환불](https://github.com/tpwls101/DDIB/assets/97137124/e9c4399d-bbf4-4e10-8dd3-682f7fd5e424)
+
+**9️⃣ 마이페이지 - 회원 정보 조회**
+
+사용자는 마이페이지에서 기본 배송지로 사용할 주소를 저장할 수 있다.
+
+![회원 정보 조회](https://github.com/tpwls101/DDIB/assets/97137124/4c03826b-0a0d-4afd-9ac7-dcb9e90dfb2e)
+
+**🔟 마이페이지 - 키워드 알림 신청/취소**
+
+사용자는 키워드별로 알림을 신청해 해당 카테고리의 상품이 등록되면 알림을 받을 수 있다.
+
+![키워드 알림 신청 및 취소](https://github.com/tpwls101/DDIB/assets/97137124/d449cdcc-69d0-462a-aeed-6d63d5d1ea92)
+
+**1️⃣1️⃣ 마이페이지 - 위시리스트**
+
+사용자는 좋아요를 누른 상품 목록을 조회할 수 있다.
+
+![위시리스트 조회-min](https://github.com/tpwls101/DDIB/assets/97137124/6e46cb71-216a-44bc-857d-54eabbd1bab6)
+
+<br>
+
+## 🔥 주요 기술 소개
+
+### 1. MSA (MicroService Architecture)
+
+저희 팀은 프로젝트 주제에 적합한 즉, 대용량 트래픽을 감당할 수 있는 아키텍처에 대해 고민하게 되었습니다. 그 결과, 기존의 Monolithic 구조 대신 MSA 구조를 선정하게 되었습니다.
+
+기존 하나의 서버로 운영되던 환경에서는 대용량 트래픽 발생에 따라 생길 수 있는 모든 문제가 SPOF 문제로 직결되었고, 이는 MSA 적용을 통해 해결할 수 있었습니다.
+
+<br>
+
+### 2. Spring Webflux와 Redis를 활용한 대기열 시스템
+
+대기열 구축을 위해 Spring Webflux 와 Redis를 활용하였습니다.
+
+Spring Webflux는 Reactive 프로그래밍 모델로서, 논 블로킹(Non-blocking) 및 비동기(Async)로 대량의 요청을 동시에 처리해야 할 때 유리합니다.
+
+Redis의 인-메모리 성능뿐만 아니라 Zset을 사용하여 우선순위를 쉽게 관리하였으며 Reactive에 맞추어 제공되는 redis-reative 라이브러리를 사용했습니다. K-V-S는 다음과 같이 사용했습니다.
+
+- `key` : queue (대기열)
+- `value` : userId (유저 아이디)
+- `score` : time (입장시간)
+
+다음은 Spring Webflux와 Redis를 사용한 대기열 시스템의 시퀀스 다이어그램입니다.
+
+![대기열 흐름도](https://github.com/tpwls101/DDIB/assets/97137124/f5585600-29e5-4798-b35c-49abe69d7683)
+
+<br>
+
+### 3. 비동기 처리
+
+결제 시스템에 비동기 처리를 적용함으로써 성능 향상을 확인할 수 있었습니다. 사용자가 100명, 200명, 500명, 1000명일 때 각각 동기, 비동기 방식으로 응답시간을 테스트 해 본 결과 **성능이 약 6배 향상**된 것을 확인했습니다.
+
+아래는 사용자가 1000명일 때 동기, 비동기 방식에 따른 응답시간입니다.
+
+- 동기 방식
+    
+    ![동기 실행시간](https://github.com/tpwls101/DDIB/assets/97137124/4b3e0aae-3c43-4740-9421-50cd60eb3fa5)
+    
+    ⇒ 10개의 표본 평균 값 : `82.872초`
+    
+- 비동기 방식
+    
+    ![비동기 실행시간](https://github.com/tpwls101/DDIB/assets/97137124/3eeff7fa-7e40-4139-aa65-3449db693180)
+    
+    ⇒ 10개의 표본 평균 값 : `13.681초`
+    
+<br>
+
+### 4. Redisson을 활용한 재고 동시성 제어
+
+동시에 여러 사용자가 상품을 구매할 경우, 재고량을 초과해도 상품이 구매되는 문제가 발생할 수 있습니다. 이를 방지하기 위해 동시성 제어를 구현했습니다.
+
+사용 기술 스택으로는 Redis의 Redisson 구현체를 사용했습니다. MySQL은 적당한 수준의 트래픽은 감당할 수 있지만, 대용량 트래픽을 목표로 프로젝트를 진행하고 있기 때문에 초기 구축 비용과 관리 비용이 발생하더라도 더 우수한 성능을 제공하는 Redis를 사용하기로 결정했습니다.
+
+또한, Lettue를 사용하면 스핀 락 방식으로 계속해서 락 획득을 시도하지만, Redisson을 사용하면 `pub-sub` 방식으로 Redis에 부하를 줄일 수 있기에 대용량 트래픽에 적합하다 생각해 사용하였습니다. 다음은 pub-sub 방식에 의한 락 획득 방식입니다.
+
+![Redisson 동시성 제어](https://github.com/tpwls101/DDIB/assets/97137124/feffaa90-73be-46da-9e86-8bcccd9be9e6)
+
+<br>
+
+### 5. Spring Batch
+
+상품 상태 관리를 위해 Spring Batch를 활용하였습니다. 해당 상품의 타임딜이 종료되는 시간에 맞춰 배치 작업이 실행되고, 종료된 상품에 맞게 상태를 업데이트합니다.
+
+또한 Spring Batch는 각 상품을 위시리스트에 담은 회원들을 위해 해당 상품의 타임딜 오픈 24시간, 1시간 전에 알림을 전송하는 기능에 사용됩니다. 이를 통해 원하는 상품의 타임딜을 놓치지 않을 수 있도록 해줍니다.
+
+<br>
+
+### 6. Logging System - EFK
+
+![로깅 시스템](https://github.com/tpwls101/DDIB/assets/97137124/6c5cdb19-41b0-4483-9030-a56a237cfd62)
+
+MSA 기반에서는 모든 로그를 각각의 서버에 접속하여 확인해야 하는 어려움이 있기에, 이를 한 곳에서 확인할 수 있도록 EFK 로깅 시스템을 구축했습니다.
+
+Docker Compose를 통해 Elastic Search, Fluentd, Kibana를 구동하고, Logback 설정을 통해 Fluentd로 로그를 수집하며, Elastic Search에 저장한 후 Kibana를 통해 로그를 시각화합니다.
+
+<br>
+
+### 7. Tracing Tx - Micrometer & Zipkin
+
+MSA 환경에서 하나의 서버가 다른 서버를 호출하는 경우가 많기에 하나의 요청이 어떤 트랜잭션의 흐름을 가지고 실행되는지 확인하기 어려운 경우가 많습니다. 따라서 Tx 추적을 위해 Micrometer와 Zipkin을 통해 로그 수집 및 트랜잭션 추적을 구현하였습니다.
+
+로그를 수집한다는 점에서 EFK 와 성격이 유사하지만, EFK는 모든 Logging Level에 대한 수집이 가능하고 Micrometer와 Zipkin은 하나의 Rest API 요청이 발생했을 때 실행되는 모든 메소드와 트랜잭션에 대한 추적을 가능하게 합니다. 따라서 성격이 비슷하지만 사용되는 목적에서 좀 더 각자만의 분명한 이유가 있습니다.
+
+<br>
+
+### 8. Kubernetes
+
+컨테이너들을 효율적으로 관리하기 위해 쿠버네티스를 도입했습니다. 먼저 대용량 트래픽으로 인한 서버 부하가 오지 않도록 로드 밸런싱을 구축하였습니다. 또한 HorizontalPodAutoscaler를 사용하여 CPU 사용률을 확인해 일정량 이상이 되면 오토 스케일링이 되도록 하였습니다. 쿠버네티스는 아래와 같은 장점이 있습니다.
+
+1. 자동화된 배포 및 확장
+    - HPA를 사용하여 애플리케이션 배포와 확장을 자동화함으로써 관리 부담을 줄일 수 있습니다.
+    - 필요에 따라 자동으로 파드를 추가하거나 제거할 수 있습니다.
+2. 서비스 복원력
+    - 장애가 발생한 파드를 자동으로 재시작하거나 원하는 상태로 자동 복구할 수 있습니다.
+    - 지속적인 애플리케이션 가용성을 보장합니다.
+3. 효율적인 리소스 관리
+    - 리소스 요청 및 제한을 설정하여 클러스터 내에서 효율적인 리소스 분배와 사용을 보장할 수 있습니다.
+    - 클러스터 내 모든 애플리케이션에 대해 리소스 사용을 최적화합니다.
+
+<br>
+
+### 9. Jmeter를 사용한 부하테스트
+
+대용량 트래픽을 유발하고 그에 따른 성능을 테스트하기 위해 JMeter를 사용했습니다. 예시로 API에 10초 동안 10,000개의 요청(1초에 1,000개)을 보내 테스트합니다. 대기열에 부하를 걸어 아래와 같이 요청이 들어왔음을 확인할 수 있습니다. Nginx에서 초당 1,000개의 요청만 받을 수 있기 때문에 초당 1,000개 이상의 요청을 보내면 에러율이 생길 수 있습니다.
+
+- 요청에 대한 Summary Report 확인
+    
+    ![JMeter](https://github.com/tpwls101/DDIB/assets/97137124/2277d258-01cf-4418-8327-9e6d8f979908)
+    
+    ⇒ 10,000개의 요청에 대한 에러율 : 0.00%
+    
+    ⇒ 초당 처리율 : 907.9/sec
+    
+- 대기열에 부하를 걸었을 때의 화면 확인
+    
+    ![대기열](https://github.com/tpwls101/DDIB/assets/97137124/0bef8c09-e1c4-4645-a3b6-f138ab93389b)
+    
+<br>
+
+### 10. Prometheus와 Grafana를 이용한 자원 관리
+
+Prometheus로 메트릭 데이터를 수집해 Grafana로 시각화합니다. Grafana로 파드의 CPU 메모리 사용량이나 생성된 파드들을 확인할 수 있습니다.
+
+https://github.com/tpwls101/DDIB/assets/97137124/45b6c6c2-d378-455b-8720-7ff23ed0e776
+
+<br>
+
+## 💡 프로젝트 진행
+
+### Git
+
+형상 관리 시스템으로, 프로젝트의 소스 코드 버전 관리를 위해 Git을 사용했습니다.
+
+문제가 발생했을 때, 소스 코드의 변경 사항을 추적하여 쉽게 해결할 수 있었습니다. 또한, 다양한 브랜치를 생성하여 병합 및 테스트를 수행할 수 있으며, 이를 통해 다양한 기능을 동시에 개발하고 안정성을 유지할 수 있었습니다.
+
+### Jira
+
+Agile 방법론을 기반으로 한 프로젝트 관리 도구로서 Jira를 이용했습니다. 
+
+매주 월요일 오전 회의에서 한 주 동안 진행되어야 할 주 단위 계획을 짜고, 스프린트를 만들어 등록했고, 이는 각 작업에 대한 할당, 우선 순위 지정, 작업 상태 업데이트 등을 통해 프로젝트의 진행 상황을 파악하기 용이했습니다.
+
+### Notion
+
+효율적인 문서화 도구로서 Notion을 이용했습니다.
+
+필요한 기술 스택에 대한 자료 링크, 참고자료, 요구사항 정의서, 아이디어 등을 모아 관리했습니다. 그리고 항상 모든 회의 및 피드백은 기록으로 남겨두어서 잘 반영할 수 있도록 하였습니다. 깃과 지라의 컨벤션 규칙, 점검 사항 등도 Notion에 기록하여 모두가 항시 확인할 수 있도록 관리했습니다.
+
+### Scrum Meeting
+
+매일 아침 9시에 어제 했던 일, 오늘 할 일, 이슈를 각자 정리해서 5~10분 동안 서로 공유하는 시간을 가졌습니다. 이를 통해 모든 팀원들이 프로젝트의 전반적인 상태를 이해함으로써 필요한 조치를 취할 수 있었고, 자신의 작업을 공유하고 문제점이나 진전 사항을 토론할 수 있었습니다.
+
+<br>
+
+## 🔍 ERD
+
+![ERD](https://github.com/tpwls101/DDIB/assets/97137124/be8e07ff-2f92-403f-98c0-46bd49576969)
+
+<br>
+
+## 📉 시스템 아키텍처
+
+### 1️⃣차 개발
+
+1차로 MSA 구조에 Spring Cloud Gateway와 Eureka를 활용하여 개발하였습니다.
+
+![시스템 아키텍처 (Docker Compose ver) 최종](https://github.com/tpwls101/DDIB/assets/97137124/52057221-942d-4834-9542-4a85ca622317)
+
+### 2️⃣차 개발
+
+추후 쿠버네티스를 도입하여 2차 개발을 진행하였습니다.
+
+![시스템 아키텍처 (Kubernates ver) 최종](https://github.com/tpwls101/DDIB/assets/97137124/6f883a24-9723-4fcc-9d6a-60d6cb0289b2)
